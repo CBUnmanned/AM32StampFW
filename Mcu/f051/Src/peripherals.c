@@ -160,9 +160,9 @@ void MX_TIM1_Init(void)
     LL_TIM_SetClockSource(TIM1, LL_TIM_CLOCKSOURCE_INTERNAL);
     LL_TIM_OC_EnablePreload(TIM1, LL_TIM_CHANNEL_CH1);
 #ifdef USE_SWAPPED_OUPUT
-    TIM_OC_InitStruct.OCMode = LL_TIM_OCMODE_PWM2;
-#else
     TIM_OC_InitStruct.OCMode = LL_TIM_OCMODE_PWM1;
+#else
+    TIM_OC_InitStruct.OCMode = LL_TIM_OCMODE_PWM2;
 #endif
     TIM_OC_InitStruct.OCState = LL_TIM_OCSTATE_DISABLE;
     TIM_OC_InitStruct.OCNState = LL_TIM_OCSTATE_DISABLE;
